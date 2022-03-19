@@ -1,3 +1,17 @@
-v0.1.0
-
-- Sentinel
+---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2022-03-19
+  Changes:
+      - Portable reactor requires barrelled mineral water
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2022-02-06
+  Changes:
+      - Added future end-game resources from KR2
+      - Added Yuoki's Crusher for Silica mod to make https://mods.factorio.com/mod/bzsilicon mod playable
+      - Added technologies
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2022-01-30
+  Changes:
+      - Sentinel added (doubled size and balanced mechanics - it was a too small masterpiece from Krastor. And one-tile building is too small).

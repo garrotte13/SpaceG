@@ -39,7 +39,7 @@ data:extend({
     },
     prerequisites = { "steel-processing" },
     unit = {
-      count = 200,
+      count = 100,
       ingredients = {
         {"automation-science-pack", 1},
         --{"logistic-science-pack", 1},
@@ -68,7 +68,7 @@ data:extend({
         recipe = "imersite-crystal",
       },
     },
-    prerequisites = { "advanced-electronics-2", "electric-engine" },
+    prerequisites = { "utility-science-pack", "production-science-pack" },
     order = "g-e-d",
     unit = {
       count = 1000,

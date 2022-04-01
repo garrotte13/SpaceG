@@ -33,6 +33,28 @@ if mods["bzzirconium"] then
   end
   table.insert(repair_c_recipe.normal.ingredients, {type="item", name="zirconium-plate", amount=10})
 
+  repair_c_recipe = data.raw.recipe["advanced-beam-item-rampant-arsenal"]
+  for i, component in pairs(repair_c_recipe.normal.ingredients) do
+    for _, value in pairs(component) do
+     if value == "steel-plate" then
+      repair_c_recipe.normal.ingredients[i] = {type="item", name="titanium-plate", amount=10}
+      break
+     end
+    end
+  end
+  table.insert(repair_c_recipe.normal.ingredients, {type="item", name="zirconium-plate", amount=10})
+
+  repair_c_recipe = data.raw.recipe["flamethrower-turret"]
+  for i, component in pairs(repair_c_recipe.ingredients) do
+    for _, value in pairs(component) do
+     if value == "steel-plate" then
+      repair_c_recipe.ingredients[i] = {type="item", name="steel-plate", amount=25}
+      break
+     end
+    end
+  end
+  table.insert(repair_c_recipe.ingredients, {type="item", name="zirconia", amount=40})
+
   --[[
   if mods["bztitanium"] then
    local low_density_s_recipe = data.raw.recipe["low-density-structure"]

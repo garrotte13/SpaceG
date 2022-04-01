@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 2022-04-01
+  Changes:
+      - Advanced Beam Turret recipe switched to Titanium and Zirconium plates ingredients
+      - FlameTurret recipe change: 5 steel replaced by 40 Zirconia
+      - Crusher energy consumption reduced 350->250KW, crafting speed 50% increased
+---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2022-03-19
   Changes:

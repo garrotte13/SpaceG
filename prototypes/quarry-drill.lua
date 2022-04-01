@@ -320,9 +320,9 @@ data:extend({
     },
 
 		crafting_categories = {"crushing"},
-		crafting_speed = 1,
-		energy_source = {type = "electric", input_priority = "secondary", usage_priority = "secondary-input", emissions_per_minute = 3.75, },
-		energy_usage = "350kW",
+		crafting_speed = 1.5,
+		energy_source = {type = "electric", input_priority = "secondary", usage_priority = "secondary-input", emissions_per_minute = 3.0, },
+		energy_usage = "250kW",
 		ingredient_count = 1,
 		module_specification =
 		{

@@ -17,7 +17,7 @@ if mods["bzzirconium"] then
   for i, component in pairs(repair_c_recipe.normal.ingredients) do
    for _, value in pairs(component) do
     if value == "steel-plate" then
-     repair_c_recipe.normal.ingredients[i] = {type="item", name="zirconia", amount=3}
+     repair_c_recipe.normal.ingredients[i] = {type="item", name="zirconia", amount=6}
      break
     end
    end

@@ -38,7 +38,7 @@ data:extend({
       name = "mineral-water",
       order = "c",
       base_density = 2,
-      base_spots_per_km2 = 0.5,
+      base_spots_per_km2 = 0.3,
       random_probability = 1 / 50,
       random_spot_size_minimum = 1,
       random_spot_size_maximum = 1,

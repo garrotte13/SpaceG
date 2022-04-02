@@ -23,6 +23,8 @@ data.raw["spider-vehicle"]["spidertron"].energy_source = {
   data.raw["spider-vehicle"]["spidertron"].braking_force = 0.05
   data.raw["spider-vehicle"]["spidertron"].friction_force = 0.05
 
+  data.raw.capsule["raw-fish"].capsule_action.attack_parameters.cooldown = 60
+
 
   local fusion_fuel_category = {
     name = "fusion",

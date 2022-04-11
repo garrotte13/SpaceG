@@ -1,10 +1,17 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.3.1
-Date: 2022-04-01
+Version: 0.3.2
+Date: 2022-04-11
   Changes:
       - Advanced Beam Turret recipe switched to Titanium and Zirconium plates ingredients
       - FlameTurret recipe change: 5 steel replaced by 40 Zirconia
       - Crusher energy consumption reduced 350->250KW, crafting speed 50% increased
+      - Immersite isn't placed anymore. Got an idea where to go from now      
+      - Reducing rocks free zircon in BZ Zircon mod
+      - Welcoming BZ Tungsten mod - balance fixes, adding it in laser turret. Still the only way to survive is a start tungsten patch option.
+      - Futile attempts to make mineral water starting location autoplacing - didn't work to make it part of tungsten mining.
+      - BZ Foundry mod welcoming doesn't go well - this mod requires replacing graphics and separating coke production from founding. For now fixed crusher tech dependency.
+  Warfare rebalance changes (to be forked later):
+      - fish consumption cooldown is tripled. Other nerfs are coming...
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2022-03-19

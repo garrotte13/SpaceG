@@ -1,6 +1,71 @@
+local repair_c_recipe
+local resource_autoplace = require('resource-autoplace');
 
+if mods["bztungsten"] then
+  repair_c_recipe = data.raw.recipe["laser-turret"]
+  for i, component in pairs(repair_c_recipe.ingredients) do
+   for _, value in pairs(component) do
+    if value == "steel-plate" then
+     repair_c_recipe.ingredients[i] = {type="item", name="steel-plate", amount=15}
+     break
+    end
+   end
+  end
+  table.insert(repair_c_recipe.ingredients, {type="item", name="tungsten-carbide", amount=2})
+
+  repair_c_recipe = data.raw.recipe["electric-furnace"]
+  for i, component in pairs(repair_c_recipe.ingredients) do
+    for _, value in pairs(component) do
+     if value == "tungsten-carbide" then
+      repair_c_recipe.ingredients[i] = {type="item", name="tungsten-carbide", amount=3}
+      break
+     end
+    end
+   end
+   for i, component in pairs(repair_c_recipe.ingredients) do
+    for _, value in pairs(component) do
+     if value == "tungsten-plate" then
+      table.remove(repair_c_recipe.ingredients, i)
+      break
+     end
+    end
+   end
+
+   repair_c_recipe = data.raw.recipe["chemical-plant"]
+   for i, component in pairs(repair_c_recipe.ingredients) do
+     for _, value in pairs(component) do
+      if value == "tungsten-plate" then
+       repair_c_recipe.ingredients[i] = {type="item", name="tungsten-plate", amount=6}
+       break
+      end
+     end
+    end
+    for i, component in pairs(repair_c_recipe.ingredients) do
+     for _, value in pairs(component) do
+      if value == "tungsten-carbide" then
+       table.remove(repair_c_recipe.ingredients, i)
+       break
+      end
+     end
+    end
+
+end
 
 if mods["bzzirconium"] then
+
+  table.insert(data.raw.recipe["substation"].ingredients, {type="item", name="cermet", amount=5})
+
+  
+  data.raw.resource["zircon"].autoplace = resource_autoplace.resource_autoplace_settings{
+    name = "zircon",
+    order = "b-z",
+    base_density = 4,
+    has_starting_area_placement = false,
+    regular_rq_factor_multiplier = 1.1,
+    starting_rq_factor_multiplier = 1.2,
+  }
+
+  
   --data.raw.recipe["sort-stone-zircon"].enabled = "false"
   --data.raw.recipe["sort-zircon-stone"].enabled = "false"
 
@@ -13,7 +78,7 @@ if mods["bzzirconium"] then
 
 --  table.insert(data.raw.recipe["creep-miner1-radar"].ingredients, {type="item", name="cermet", amount=2})
 
-  local repair_c_recipe = data.raw.recipe["repair-capsule-rampant-arsenal"]
+  repair_c_recipe = data.raw.recipe["repair-capsule-rampant-arsenal"]
   for i, component in pairs(repair_c_recipe.normal.ingredients) do
    for _, value in pairs(component) do
     if value == "steel-plate" then
@@ -43,6 +108,8 @@ if mods["bzzirconium"] then
     end
   end
   table.insert(repair_c_recipe.normal.ingredients, {type="item", name="zirconium-plate", amount=10})
+
+  
 
   repair_c_recipe = data.raw.recipe["flamethrower-turret"]
   for i, component in pairs(repair_c_recipe.ingredients) do
@@ -75,7 +142,7 @@ if mods["bzzirconium"] then
     sil.normal.ingredients[1] = {type="item", name="stone", amount=2}
     table.insert(data.raw.recipe["red-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
     table.insert(data.raw.recipe["green-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
-    data.raw.technology["silica-processing"].prerequisites = {"crusher"}
+    --data.raw.technology["silica-processing"].prerequisites = {"crusher"}
   end
 
 end

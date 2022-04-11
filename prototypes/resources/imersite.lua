@@ -26,7 +26,7 @@ data:extend({
     },
     collision_box = { { -3.4, -3.4 }, { 3.4, 3.4 } },
     selection_box = { { -3.5, -3.5 }, { 3.5, 3.5 } },
-    autoplace = resource_autoplace.resource_autoplace_settings({
+    --[[ autoplace = resource_autoplace.resource_autoplace_settings({
       name = "imersite",
       order = "f",
       base_density = 1,
@@ -42,6 +42,7 @@ data:extend({
       regular_rq_factor_multiplier = 0.1,
       candidate_spot_count = 10,
     }),
+    --]]
     stage_counts = { 0 },
     stages = {
       sheet = {

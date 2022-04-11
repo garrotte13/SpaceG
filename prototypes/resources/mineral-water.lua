@@ -14,7 +14,7 @@ data:extend({
     infinite = false,
     map_grid = false,
     highlight = true,
-    minimum = 20000,
+    minimum = 10000,
     normal = 75000,
     infinite_depletion_amount = 10,
     resource_patch_search_radius = 12,
@@ -36,7 +36,7 @@ data:extend({
     selection_box = { { -1, -1 }, { 1, 1 } },
     autoplace = resource_autoplace.resource_autoplace_settings({
       name = "mineral-water",
-      order = "c",
+      order = "b-a",
       base_density = 2,
       base_spots_per_km2 = 0.3,
       random_probability = 1 / 50,
@@ -44,7 +44,9 @@ data:extend({
       random_spot_size_maximum = 1,
       additional_richness = 50000,
       has_starting_area_placement = false,
+      starting_area_amount = 3,
       regular_rq_factor_multiplier = 1,
+      starting_rq_factor_multiplier = 1.2,
     }),
     stage_counts = { 0 },
     stages = {

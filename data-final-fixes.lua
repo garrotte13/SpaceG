@@ -140,6 +140,12 @@ if mods["bzzirconium"] then
     local sil = data.raw.recipe["silica"]
     sil.category = "crushing"
     sil.normal.ingredients[1] = {type="item", name="stone", amount=2}
+    sil.normal.result_count = nil
+    sil.normal.result = nil
+    sil.normal.results = {
+      { type = "item", name = "silica", amount_min = 4, amount_max = 6 },
+    }
+    data.raw.recipe["stone-brick"].ingredients = {{type="item", name="silica", amount=5}}
     table.insert(data.raw.recipe["red-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
     table.insert(data.raw.recipe["green-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
     --data.raw.technology["silica-processing"].prerequisites = {"crusher"}

@@ -3,6 +3,8 @@ Version: 0.3.3
 Date: 2022-04-13
   Changes:
         - Crusher graphics replacement (APM instead of Yuoki's)
+        - Burner-fuel crusher added (no steel or stone-brick is required)
+        - Stone brick is made of silica instead of stone ore, therefore crushing stone is essential step of early progress
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.2
 Date: 2022-04-11

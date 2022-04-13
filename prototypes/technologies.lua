@@ -28,8 +28,8 @@ data:extend({
   {
     type = "technology",
     name = "crusher",
-    icon = "__SpaceG__/graphics/crusher_tech.png",
-    icon_size = 256,
+    icon = "__SpaceG__/graphics/apm_crusher_machine_2.png",
+    icon_size = 128,
     icon_mipmaps = 4,
     effects = {
       {

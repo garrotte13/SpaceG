@@ -22,10 +22,11 @@ data:extend({
 		icon_size = 128, icon =  "__SpaceG__/graphics/apm_crusher_machine_2.png",
 		enabled = "false",
 		ingredients = {
-      {"steel-plate", 3},
-      {"iron-gear-wheel", 5},
+      {"steel-plate", 5},
+      {"iron-gear-wheel", 3},
       {"electronic-circuit", 4},
       {"stone-brick", 5},
+      {"crusher_0", 1},
     },
 		results=
 		{
@@ -111,16 +112,16 @@ data:extend({
 --]]
 
 	{
-		type = "assembling-machine",
+		type = "furnace",
 		name = "y_crusher",
 		icon_size = 128, icon =  "__SpaceG__/graphics/apm_crusher_machine_2.png",
 		flags = {"placeable-neutral","player-creation"},
-		minable = {hardness = 0.5, mining_time = 0.5, result = "y_crusher"},
+		minable = {hardness = 0.5, mining_time = 0.7, result = "y_crusher"},
 		max_health = 300,
         light = nil,
-        collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-        selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-        entity_info_icon_shift = {0, 0.4},
+        collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
+        selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+        entity_info_icon_shift = {0, 0.6},
         working_sound = {
             sound = {
             filename = "__SpaceG__/sounds/crusher.ogg",
@@ -131,9 +132,10 @@ data:extend({
         },
     crafting_categories = {"crushing"},
     crafting_speed = 4,
-    energy_source = {type = "electric", input_priority = "secondary", usage_priority = "secondary-input", emissions_per_minute = 3.0, },
+    energy_source = {type = "electric", input_priority = "secondary", usage_priority = "secondary-input", emissions_per_minute = 2.5, },
     energy_usage = "280kW",
-    ingredient_count = 1,
+    source_inventory_size = 1,
+    result_inventory_size = 2,
     module_specification =
     {
         module_slots = 2
@@ -150,8 +152,9 @@ data:extend({
             height = 128,
             frame_count = 32,
             line_length = 8,
-            shift = {0.4375, -0.28125},
-            animation_speed = 1.0666667,
+            scale = 1.67,
+            shift = {0.7415, -0.73125},
+            animation_speed = 0.666667,
             hr_version =
             {
               filename = "__SpaceG__/graphics/crusher_apm/hr_crusher_2.png",
@@ -160,9 +163,10 @@ data:extend({
               height = 256,
               frame_count = 32,
               line_length = 8,
-              shift = {0.4375, -0.28125},
-              animation_speed = 1.0666667,
-              scale = 0.5
+              --shift = {0.4375, -0.28125},
+              shift = {0.7415, -0.73125},
+              animation_speed = 0.666667,
+              scale = 0.8335
             }
           },
         },
@@ -175,8 +179,9 @@ data:extend({
               height = 128,
               frame_count = 32,
               line_length = 8,
-              shift = {0.4375, -0.28125},
-              animation_speed = 1.0666667,
+              shift = {0.7415, -0.73125},
+              animation_speed = 0.666667,
+              scale = 1.67,
               hr_version =
               {
                 filename = "__SpaceG__/graphics/crusher_apm/hr_crusher_shadow_electric.png",
@@ -186,9 +191,9 @@ data:extend({
                 height = 256,
                 frame_count = 32,
                 line_length = 8,
-                shift = {0.4375, -0.28125},
-                animation_speed = 1.0666667,
-                scale = 0.5
+                shift = {0.7415, -0.73125},
+                animation_speed = 0.666667,
+                scale = 0.8335
               }
             },
           },
@@ -198,7 +203,8 @@ data:extend({
     },
 
     {
-      type = "assembling-machine",
+      type = "furnace",
+      --type = "assembling-machine",
       name = "crusher_0",
       icon_size = 128, icon =  "__SpaceG__/graphics/apm_crusher_machine_0.png",
       flags = {"placeable-neutral","player-creation"},
@@ -229,7 +235,8 @@ data:extend({
         smoke = smoke_burner
       },
       energy_usage = "90kW",
-      ingredient_count = 1,
+      source_inventory_size = 1,
+      result_inventory_size = 1,
       module_specification = nil,
       animation =
       {

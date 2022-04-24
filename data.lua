@@ -8,6 +8,7 @@ require("prototypes/resources/imersite")
 require("prototypes/resources/mineral-water")
 require("prototypes/resources/rare-metals")
 require("prototypes/technologies")
+require("prototypes/firetorchparts")
 
 data.raw["spider-vehicle"]["spidertron"].energy_source = {
     type = "burner",
@@ -43,3 +44,24 @@ data.raw["spider-vehicle"]["spidertron"].energy_source = {
   
   
   data:extend{fusion_fuel_category,reactor}
+
+  --[[
+data:extend({
+{
+  type = "simple-entity-with-owner",
+  name = "testingobj",
+  max_health = 5,
+  picture = {
+    filename = "__core__/graphics/empty.png",
+    priority = "low",
+    width = 1,
+    height = 1,
+    line_length = 1,
+  },
+  flags = {"hidden", "not-flammable", "not-in-kill-statistics", "not-selectable-in-game", "not-on-map"},
+  collision_mask = {},
+
+}
+
+  })
+  --]]

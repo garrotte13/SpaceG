@@ -1,53 +1,87 @@
-local repair_c_recipe
+local c_recipe
 local resource_autoplace = require('resource-autoplace');
 
+c_recipe = data.raw.recipe["flamethrower-turret"]
+for i, component in pairs(c_recipe.ingredients) do
+ for _, value in pairs(component) do
+   if value == "pipe" then
+    c_recipe.ingredients[i] = {type="item", name="fire-torch-parts", amount=2}
+     break
+   end
+ end
+end
+table.insert(c_recipe.ingredients, {type="item", name="stone-brick", amount=5})
+table.insert(data.raw.technology["flamethrower"].effects, { type = "unlock-recipe", recipe = "fire-torch-parts"})
+
 if mods["bztungsten"] then
-  repair_c_recipe = data.raw.recipe["laser-turret"]
-  for i, component in pairs(repair_c_recipe.ingredients) do
+  c_recipe = data.raw.recipe["laser-turret"]
+  for i, component in pairs(c_recipe.ingredients) do
    for _, value in pairs(component) do
     if value == "steel-plate" then
-     repair_c_recipe.ingredients[i] = {type="item", name="steel-plate", amount=15}
+     c_recipe.ingredients[i] = {type="item", name="steel-plate", amount=15}
      break
     end
    end
   end
-  table.insert(repair_c_recipe.ingredients, {type="item", name="tungsten-carbide", amount=2})
+  table.insert(c_recipe.ingredients, {type="item", name="tungsten-carbide", amount=2})
 
-  repair_c_recipe = data.raw.recipe["electric-furnace"]
-  for i, component in pairs(repair_c_recipe.ingredients) do
+  c_recipe = data.raw.recipe["electric-furnace"]
+  for i, component in pairs(c_recipe.ingredients) do
     for _, value in pairs(component) do
      if value == "tungsten-carbide" then
-      repair_c_recipe.ingredients[i] = {type="item", name="tungsten-carbide", amount=3}
+      c_recipe.ingredients[i] = {type="item", name="tungsten-carbide", amount=3}
       break
      end
     end
    end
-   for i, component in pairs(repair_c_recipe.ingredients) do
+   for i, component in pairs(c_recipe.ingredients) do
     for _, value in pairs(component) do
      if value == "tungsten-plate" then
-      table.remove(repair_c_recipe.ingredients, i)
+      table.remove(c_recipe.ingredients, i)
       break
      end
     end
    end
 
-   repair_c_recipe = data.raw.recipe["chemical-plant"]
-   for i, component in pairs(repair_c_recipe.ingredients) do
+   c_recipe = data.raw.recipe["chemical-plant"]
+   for i, component in pairs(c_recipe.ingredients) do
      for _, value in pairs(component) do
       if value == "tungsten-plate" then
-       repair_c_recipe.ingredients[i] = {type="item", name="tungsten-plate", amount=6}
+       c_recipe.ingredients[i] = {type="item", name="tungsten-plate", amount=6}
        break
       end
      end
     end
-    for i, component in pairs(repair_c_recipe.ingredients) do
+    for i, component in pairs(c_recipe.ingredients) do
      for _, value in pairs(component) do
       if value == "tungsten-carbide" then
-       table.remove(repair_c_recipe.ingredients, i)
+       table.remove(c_recipe.ingredients, i)
        break
       end
      end
     end
+
+    table.insert(data.raw.recipe["fire-torch-parts"].ingredients, {type="item", name="tungsten-plate", amount=2})
+
+    c_recipe = data.raw.recipe["flamethrower-turret"]
+    for i, component in pairs(c_recipe.ingredients) do
+      for _, value in pairs(component) do
+       if value == "tungsten-plate" then
+        table.remove(c_recipe.ingredients, i)
+        break
+       end
+      end
+     end
+
+     c_recipe = data.raw.recipe["flamethrower"]
+     for i, component in pairs(c_recipe.ingredients) do
+      for _, value in pairs(component) do
+       if value == "tungsten-plate" then
+        c_recipe.ingredients[i] = {type="item", name="fire-torch-parts", amount=1}
+        break
+       end
+      end
+     end
 
 end
 
@@ -65,62 +99,50 @@ if mods["bzzirconium"] then
     starting_rq_factor_multiplier = 1.2,
   }
 
-  
-  --data.raw.recipe["sort-stone-zircon"].enabled = "false"
-  --data.raw.recipe["sort-zircon-stone"].enabled = "false"
 
-
---  table.insert(data.raw.recipe["rocket"].ingredients, {type="item", name="zirconium-plate", amount=1})
---  table.insert(data.raw.recipe["land-mine"].ingredients, {type="item", name="zirconium-plate", amount=2})
---  table.insert(data.raw.recipe["explosive-rocket"].ingredients, {type="item", name="zirconium-plate", amount=1})
---  table.insert(data.raw.recipe["cannon-shell"].normal.ingredients, {type="item", name="zirconium-plate", amount=1})
---  table.insert(data.raw.recipe["explosive-cannon-shell"].normal.ingredients, {type="item", name="zirconium-plate", amount=2})
-
---  table.insert(data.raw.recipe["creep-miner1-radar"].ingredients, {type="item", name="cermet", amount=2})
-
-  repair_c_recipe = data.raw.recipe["repair-capsule-rampant-arsenal"]
-  for i, component in pairs(repair_c_recipe.normal.ingredients) do
+  c_recipe = data.raw.recipe["repair-capsule-rampant-arsenal"]
+  for i, component in pairs(c_recipe.normal.ingredients) do
    for _, value in pairs(component) do
     if value == "steel-plate" then
-     repair_c_recipe.normal.ingredients[i] = {type="item", name="zirconia", amount=6}
+     c_recipe.normal.ingredients[i] = {type="item", name="zirconia", amount=6}
      break
     end
    end
   end
-  repair_c_recipe = data.raw.recipe["gun-item-rampant-arsenal"]
-  for i, component in pairs(repair_c_recipe.normal.ingredients) do
+  c_recipe = data.raw.recipe["gun-item-rampant-arsenal"]
+  for i, component in pairs(c_recipe.normal.ingredients) do
    for _, value in pairs(component) do
     if value == "steel-plate" then
-     repair_c_recipe.normal.ingredients[i] = {type="item", name="steel-plate", amount=12}
+     c_recipe.normal.ingredients[i] = {type="item", name="steel-plate", amount=12}
      break
     end
    end
   end
-  table.insert(repair_c_recipe.normal.ingredients, {type="item", name="zirconium-plate", amount=10})
+  table.insert(c_recipe.normal.ingredients, {type="item", name="zirconium-plate", amount=10})
 
-  repair_c_recipe = data.raw.recipe["advanced-beam-item-rampant-arsenal"]
-  for i, component in pairs(repair_c_recipe.normal.ingredients) do
+  c_recipe = data.raw.recipe["advanced-beam-item-rampant-arsenal"]
+  for i, component in pairs(c_recipe.normal.ingredients) do
     for _, value in pairs(component) do
      if value == "steel-plate" then
-      repair_c_recipe.normal.ingredients[i] = {type="item", name="titanium-plate", amount=10}
+      c_recipe.normal.ingredients[i] = {type="item", name="titanium-plate", amount=10}
       break
      end
     end
   end
-  table.insert(repair_c_recipe.normal.ingredients, {type="item", name="zirconium-plate", amount=10})
+  table.insert(c_recipe.normal.ingredients, {type="item", name="zirconium-plate", amount=10})
 
-  
+  table.insert(data.raw.recipe["fire-torch-parts"].ingredients, {type="item", name="zirconia", amount=20})
 
-  repair_c_recipe = data.raw.recipe["flamethrower-turret"]
-  for i, component in pairs(repair_c_recipe.ingredients) do
+  c_recipe = data.raw.recipe["flamethrower-turret"]
+  for i, component in pairs(c_recipe.ingredients) do
     for _, value in pairs(component) do
      if value == "steel-plate" then
-      repair_c_recipe.ingredients[i] = {type="item", name="steel-plate", amount=25}
+      c_recipe.ingredients[i] = {type="item", name="steel-plate", amount=25}
       break
      end
     end
   end
-  table.insert(repair_c_recipe.ingredients, {type="item", name="zirconia", amount=40})
+
 
   --[[
   if mods["bztitanium"] then

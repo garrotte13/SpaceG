@@ -125,9 +125,9 @@ data:extend({
         working_sound = {
             sound = {
             filename = "__SpaceG__/sounds/crusher.ogg",
-            volume = 0.8,
+            volume = 0.6,
         },
-        idle_sound = { filename = "__base__/sound/idle1.ogg" },
+        idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
         max_sounds_per_type = 2,
         },
     crafting_categories = {"crushing"},
@@ -217,7 +217,7 @@ data:extend({
           working_sound = {
               sound = {
               filename = "__base__/sound/burner-mining-drill.ogg",
-              volume = 1,
+              volume = 0.8,
           },
           idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
           max_sounds_per_type = 2,

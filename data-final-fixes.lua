@@ -1,30 +1,19 @@
 local c_recipe
 local resource_autoplace = require('resource-autoplace');
 
-c_recipe = data.raw.recipe["flamethrower-turret"]
-for i, component in pairs(c_recipe.ingredients) do
- for _, value in pairs(component) do
-   if value == "pipe" then
-    c_recipe.ingredients[i] = {type="item", name="fire-torch-parts", amount=2}
-     break
-   end
- end
-end
-table.insert(c_recipe.ingredients, {type="item", name="stone-brick", amount=5})
-table.insert(data.raw.technology["flamethrower"].effects, { type = "unlock-recipe", recipe = "fire-torch-parts"})
-
 if mods["bztungsten"] then
   c_recipe = data.raw.recipe["laser-turret"]
   for i, component in pairs(c_recipe.ingredients) do
    for _, value in pairs(component) do
     if value == "steel-plate" then
-     c_recipe.ingredients[i] = {type="item", name="steel-plate", amount=15}
+     c_recipe.ingredients[i] = {type="item", name="steel-plate", amount=16}
      break
     end
    end
   end
-  table.insert(c_recipe.ingredients, {type="item", name="tungsten-carbide", amount=2})
+  table.insert(c_recipe.ingredients, {type="item", name="tungsten-plate", amount=12})
 
+--[[
   c_recipe = data.raw.recipe["electric-furnace"]
   for i, component in pairs(c_recipe.ingredients) do
     for _, value in pairs(component) do
@@ -43,6 +32,7 @@ if mods["bztungsten"] then
     end
    end
 
+
    c_recipe = data.raw.recipe["chemical-plant"]
    for i, component in pairs(c_recipe.ingredients) do
      for _, value in pairs(component) do
@@ -60,19 +50,21 @@ if mods["bztungsten"] then
       end
      end
     end
+--]]
 
     table.insert(data.raw.recipe["fire-torch-parts"].ingredients, {type="item", name="tungsten-plate", amount=2})
+    table.insert(data.raw.technology["flamethrower"].effects, { type = "unlock-recipe", recipe = "fire-torch-parts"})
 
     c_recipe = data.raw.recipe["flamethrower-turret"]
     for i, component in pairs(c_recipe.ingredients) do
-      for _, value in pairs(component) do
-       if value == "tungsten-plate" then
-        table.remove(c_recipe.ingredients, i)
-        break
-       end
+     for _, value in pairs(component) do
+      if value == "pipe" then c_recipe.ingredients[i] = {type="item", name="fire-torch-parts", amount=2}
+        elseif value == "tungsten-plate" then c_recipe.ingredients[i] = {type="item", name="stone-brick", amount=5}
+          elseif value == "steel-plate" then c_recipe.ingredients[i] = {type="item", name="steel-plate", amount=25}
       end
      end
-
+    end
+    
      c_recipe = data.raw.recipe["flamethrower"]
      for i, component in pairs(c_recipe.ingredients) do
       for _, value in pairs(component) do
@@ -89,7 +81,7 @@ if mods["bzzirconium"] then
 
   table.insert(data.raw.recipe["substation"].ingredients, {type="item", name="cermet", amount=5})
 
-  
+
   data.raw.resource["zircon"].autoplace = resource_autoplace.resource_autoplace_settings{
     name = "zircon",
     order = "b-z",
@@ -131,17 +123,9 @@ if mods["bzzirconium"] then
   end
   table.insert(c_recipe.normal.ingredients, {type="item", name="zirconium-plate", amount=10})
 
-  table.insert(data.raw.recipe["fire-torch-parts"].ingredients, {type="item", name="zirconia", amount=20})
+  if mods["bztungsten"] then table.insert(data.raw.recipe["fire-torch-parts"].ingredients, {type="item", name="zirconia", amount=20}) end
 
-  c_recipe = data.raw.recipe["flamethrower-turret"]
-  for i, component in pairs(c_recipe.ingredients) do
-    for _, value in pairs(component) do
-     if value == "steel-plate" then
-      c_recipe.ingredients[i] = {type="item", name="steel-plate", amount=25}
-      break
-     end
-    end
-  end
+
 
 
   --[[

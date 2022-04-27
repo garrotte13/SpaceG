@@ -8,7 +8,7 @@ require("prototypes/resources/imersite")
 require("prototypes/resources/mineral-water")
 require("prototypes/resources/rare-metals")
 require("prototypes/technologies")
-require("prototypes/firetorchparts")
+if mods["bztungsten"] then require("prototypes/firetorchparts") end
 
 data.raw["spider-vehicle"]["spidertron"].energy_source = {
     type = "burner",

@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.4
+Date: 2022-04-27
+  Changes:
+        - Another Brevven's brilliant mod integrated - bztungsten. Most work was done in forked bzfoundry customization (one more great mod from Brevven).
+        - Fire blowtorch parts item added for more reasonable flamethrower turret. Heavily depends on bztungsten.
+        - Test code added for factorio API capabilities research (integration is turned off)
+        - Fixed locale texts
+---------------------------------------------------------------------------------------------------
 Version: 0.3.3
 Date: 2022-04-13
   Changes:

@@ -2,6 +2,39 @@ local c_recipe
 local resource_autoplace = require('resource-autoplace');
 
 if mods["bztungsten"] then
+  -- Fixing piercing bullets ---
+  c_recipe = data.raw.recipe["piercing-rounds-magazine"]
+  for i, component in pairs(c_recipe.ingredients) do
+   for _, value in pairs(component) do
+    if value == "tungsten-plate" then
+     c_recipe.ingredients[i] = {type="item", name="tungsten-plate", amount=2}
+     break
+    end
+   end
+  end
+  table.insert(c_recipe.ingredients, {type="item", name="copper-plate", amount=2})
+  c_recipe = data.raw.recipe["piercing-shotgun-shell"]
+  for i, component in pairs(c_recipe.ingredients) do
+   for _, value in pairs(component) do
+    if value == "tungsten-plate" then
+     c_recipe.ingredients[i] = {type="item", name="tungsten-plate", amount=2}
+     break
+    end
+   end
+  end
+  table.insert(c_recipe.ingredients, {type="item", name="copper-plate", amount=2})
+-- End fixing piercing bullets ---
+
+  c_recipe = data.raw.recipe["artillery-shell"] --shells don't have rocket engines
+  for i, component in pairs(c_recipe.ingredients) do
+    for _, value in pairs(component) do
+      if value == "rocket-engine-nozzle" then
+        table.remove(c_recipe.ingredients, i)
+        break
+      end
+    end
+  end
+
   c_recipe = data.raw.recipe["laser-turret"]
   for i, component in pairs(c_recipe.ingredients) do
    for _, value in pairs(component) do
@@ -13,7 +46,7 @@ if mods["bztungsten"] then
   end
   table.insert(c_recipe.ingredients, {type="item", name="tungsten-plate", amount=12})
 
---[[
+--[[ ATTEMPT TO SHORT COMPONENTS LIST OF midgame assemblers didn't look fun, but Electric Furnace recipe is really horrible
   c_recipe = data.raw.recipe["electric-furnace"]
   for i, component in pairs(c_recipe.ingredients) do
     for _, value in pairs(component) do
@@ -31,7 +64,6 @@ if mods["bztungsten"] then
      end
     end
    end
-
 
    c_recipe = data.raw.recipe["chemical-plant"]
    for i, component in pairs(c_recipe.ingredients) do
@@ -54,6 +86,7 @@ if mods["bztungsten"] then
 
     table.insert(data.raw.recipe["fire-torch-parts"].ingredients, {type="item", name="tungsten-plate", amount=2})
     table.insert(data.raw.technology["flamethrower"].effects, { type = "unlock-recipe", recipe = "fire-torch-parts"})
+    table.insert(data.raw.recipe["tank"].normal.ingredients, {type="item", name="fire-torch-parts", amount=2})
 
     c_recipe = data.raw.recipe["flamethrower-turret"]
     for i, component in pairs(c_recipe.ingredients) do
@@ -154,6 +187,7 @@ if mods["bzzirconium"] then
     data.raw.recipe["stone-brick"].ingredients = {{type="item", name="silica", amount=5}}
     table.insert(data.raw.recipe["red-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
     table.insert(data.raw.recipe["green-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
+    table.insert(data.raw.recipe["low-density-structure"].normal.ingredients, {type="item", name="copper-plate", amount=10})
     --data.raw.technology["silica-processing"].prerequisites = {"crusher"}
   end
 

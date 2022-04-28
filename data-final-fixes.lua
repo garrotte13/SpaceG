@@ -108,6 +108,94 @@ if mods["bztungsten"] then
       end
      end
 
+     -- ***** Changing Recipe for Advanced FlameThrower Turret - better be DIVIDED into TWO parts - tungsten-dependent and general part
+     c_recipe = data.raw.recipe["suppression-cannon-item-rampant-arsenal"]
+     c_recipe.category = "advanced-crafting"
+     for i, component in pairs(c_recipe.normal.ingredients) do
+      for _, value in pairs(component) do
+       if value == "steel-plate" then c_recipe.normal.ingredients[i] = {type="item", name="flamethrower-turret", amount=2}
+         elseif value == "engine-unit" then c_recipe.normal.ingredients[i] = {type="item", name="fire-torch-parts", amount=3}
+           elseif value == "tungsten-plate" then c_recipe.normal.ingredients[i] = {type="item", name="tungsten-plate", amount=12}
+            elseif value == "concrete" then c_recipe.normal.ingredients[i] = {type="item", name="concrete", amount=20}
+       end
+      end
+     end
+     -- ***** End of Advanced FlameThrower Turret change.
+
+     if mods["bzzirconium"] then     -- ***** Changing Recipes for Electric and Steel Furnaces, Zirconium processing *****
+      c_recipe = data.raw.recipe["electric-furnace"]
+      c_recipe.category = "advanced-crafting"
+      c_recipe.energy_required = c_recipe.energy_required * 2
+      c_recipe.result_count = 2
+      for i, component in pairs(c_recipe.ingredients) do
+        for _, value in pairs(component) do
+         if value == "zirconia" then
+          table.remove(c_recipe.ingredients, i)
+          break
+         end
+        end
+       end
+       for i, component in pairs(c_recipe.ingredients) do
+        for _, value in pairs(component) do
+         if value == "stone-brick" then
+          table.remove(c_recipe.ingredients, i)
+          break
+         end
+        end
+       end
+      for i, ingredient in pairs(c_recipe.ingredients) do
+        if ingredient.name then
+          ingredient.amount = ingredient.amount * 2
+        end
+        if ingredient[1] then ingredient[2] = ingredient[2] * 2 end
+      end
+
+      for i, component in pairs(c_recipe.ingredients) do
+        for _, value in pairs(component) do
+          if value == "steel-plate" then
+            c_recipe.ingredients[i] = {type="item", name="steel-furnace", amount=1}
+            break
+          end
+        end
+      end
+
+      c_recipe = data.raw.recipe["steel-furnace"]
+      for i, component in pairs(c_recipe.ingredients) do
+        for _, value in pairs(component) do
+         if value == "steel-plate" then c_recipe.ingredients[i] = {type="item", name="steel-plate", amount=10}
+           elseif value == "stone-brick" then c_recipe.ingredients[i] = {type="item", name="stone-brick", amount=10}
+             elseif value == "zircon" then c_recipe.ingredients[i] = {type="item", name="zirconia", amount=10}
+         end
+        end
+      end
+
+      c_recipe = data.raw.technology["advanced-material-processing-2"]
+      for i, preq in pairs(c_recipe.prerequisites) do
+        if preq == "zirconia-processing" then
+          table.remove(c_recipe.prerequisites, i)
+          break
+        end
+      end
+
+      c_recipe = data.raw.technology["zirconia-processing"]
+      for i, preq in pairs(c_recipe.prerequisites) do
+        if preq == "automation-2" then
+          c_recipe.prerequisites[i] = "logistic-science-pack"
+          break
+        end
+      end
+
+      c_recipe = data.raw.technology["advanced-material-processing"]
+      for i, preq in pairs(c_recipe.prerequisites) do
+        if preq == "logistic-science-pack" then
+          c_recipe.prerequisites[i] = "zirconia-processing"
+          break
+        end
+      end
+
+
+     end -- ***** END of furnaces recipe change *****
+
 end
 
 if mods["bzzirconium"] then

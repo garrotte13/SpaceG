@@ -4,8 +4,11 @@ Date: 2022-04-28
   Changes:
         - Another Brevven's brilliant mod integrated - bztungsten. Most work was done in forked Brevven's bzfoundry customization, but some balance fixes here.
         - Fire blowtorch parts item added for more reasonable flamethrower weapons and turrets. Depends essentially on bztungsten mod.
-        - Test code added for factorio API capabilities research (integration is turned off)
-        - Fixed locale texts
+        - Advanced flamethower turret requires basic flamethrower turrets as ingredient when bztungsten is loaded.
+        - Steel furnace became almost twice more expensive when bztungsten + bzzirconium are loaded.
+        - Electric furnace recipe is more simple - half of ingredients are replaced by a half of steel furnace.
+        - Test code added for factorio API capabilities research (but not loaded in game).
+        - Fixed locale texts.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.3
 Date: 2022-04-13

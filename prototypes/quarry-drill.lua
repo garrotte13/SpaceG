@@ -171,6 +171,7 @@ data:extend({
       { "rare-metals", 50 },
       { "electric-engine-unit", 100 },
       { "processing-unit", 20 },
+      mods["bztungsten"] and { "tungsten-carbide", 20 },
     },
     result = "kr-quarry-drill",
   },

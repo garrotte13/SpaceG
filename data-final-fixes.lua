@@ -217,7 +217,7 @@ if mods["bzzirconium"] then
   for i, component in pairs(c_recipe.normal.ingredients) do
    for _, value in pairs(component) do
     if value == "steel-plate" then
-     c_recipe.normal.ingredients[i] = {type="item", name="zirconia", amount=6}
+     c_recipe.normal.ingredients[i] = {type="item", name="zirconia", amount=5}
      break
     end
    end
@@ -249,19 +249,28 @@ if mods["bzzirconium"] then
 
 
 
-  --[[
+  
   if mods["bztitanium"] then
-   local low_density_s_recipe = data.raw.recipe["low-density-structure"]
-   for i, component in pairs(low_density_s_recipe.normal.ingredients) do
+    c_recipe = data.raw.recipe["low-density-structure"]
+   for i, component in pairs(c_recipe.normal.ingredients) do
     for _, value in pairs(component) do
-      if value == "titanium-plate" then
-        low_density_s_recipe.normal.ingredients[i] = {type="item", name="titanium-plate", amount=1}
-        break
+      if value == "titanium-plate" then c_recipe.normal.ingredients[i] = {type="item", name="titanium-plate", amount=4}
+        elseif value == "cermet" then c_recipe.normal.ingredients[i] = {type="item", name="cermet", amount=15}
       end
     end
    end
+   c_recipe = data.raw.recipe["cermet"]
+   for i, component in pairs(c_recipe.ingredients) do
+    for _, value in pairs(component) do
+     if value == "titanium-plate" then
+      table.remove(c_recipe.ingredients, i)
+      break
+     end
+    end
+   end
+
   end
-  --]]
+ 
 
   if mods["bzsilicon"] then
     local sil = data.raw.recipe["silica"]
@@ -275,7 +284,7 @@ if mods["bzzirconium"] then
     data.raw.recipe["stone-brick"].ingredients = {{type="item", name="silica", amount=5}}
     table.insert(data.raw.recipe["red-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
     table.insert(data.raw.recipe["green-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
-    table.insert(data.raw.recipe["low-density-structure"].normal.ingredients, {type="item", name="copper-plate", amount=10})
+    table.insert(data.raw.recipe["low-density-structure"].normal.ingredients, {type="item", name="copper-plate", amount=12})
     --data.raw.technology["silica-processing"].prerequisites = {"crusher"}
   end
 

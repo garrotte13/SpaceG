@@ -9,6 +9,7 @@ Date: 2022-04-28
         - Electric furnace recipe is more simple - half of ingredients are replaced by a half of steel furnace.
         - Test code added for factorio API capabilities research (but not loaded in game).
         - Fixed locale texts.
+        - Fixing sounds for RampantIndustry airfilters (MIT licensed taken from Krastorio2).
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.3
 Date: 2022-04-13

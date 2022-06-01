@@ -50,6 +50,48 @@ data:extend({
 
   {
     type = "technology",
+    name = "toolbelt-extended",
+    icon_size = 256,
+    icon_mipmaps = 4,
+    icons = {
+      {
+        icon = "__base__/graphics/technology/toolbelt.png",
+        icon_size = 256,
+        icon_mipmaps = 4
+      },
+      {
+        icon = "__core__/graphics/icons/technology/constants/constant-capacity.png",
+        icon_size = 128,
+        icon_mipmaps = 3,
+        shift = {100, 100}
+      }
+    },
+    prerequisites = {"toolbelt", "utility-science-pack", "production-science-pack" },
+    effects =
+    {
+      {
+        type = "character-inventory-slots-bonus",
+        modifier = 10
+      }
+    },
+    unit =
+    {
+      count = 1000,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1}
+      },
+      time = 30
+    },
+    --order = "c-k-m"
+  },
+
+  {
+    type = "technology",
     name = "kr-quarry-minerals-extraction",
     icon = "__SpaceG__/graphics/quarry-drill_tech.png",
     icon_size = 256,

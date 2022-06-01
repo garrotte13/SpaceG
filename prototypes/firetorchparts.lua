@@ -15,6 +15,7 @@ data:extend(
 		type = "recipe",
 		name = "fire-torch-parts",
 		enabled = false,
+		energy_required = 5,
         category = "advanced-crafting",
 		subgroup = "intermediate-product",
 		order = "y[fire-torch-parts]",

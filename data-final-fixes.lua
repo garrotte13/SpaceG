@@ -212,12 +212,12 @@ if mods["bzzirconium"] then
     starting_rq_factor_multiplier = 1.2,
   }
 
-
+  table.insert(data.raw.recipe["repair-pack"].ingredients, {type="item", name="zirconia", amount=1})
   c_recipe = data.raw.recipe["repair-capsule-rampant-arsenal"]
   for i, component in pairs(c_recipe.normal.ingredients) do
    for _, value in pairs(component) do
     if value == "steel-plate" then
-     c_recipe.normal.ingredients[i] = {type="item", name="zirconia", amount=5}
+     c_recipe.normal.ingredients[i] = {type="item", name="zirconia", amount=4}
      break
     end
    end

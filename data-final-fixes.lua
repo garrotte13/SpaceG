@@ -212,12 +212,11 @@ if mods["bzzirconium"] then
     starting_rq_factor_multiplier = 1.2,
   }
 
-  table.insert(data.raw.recipe["repair-pack"].ingredients, {type="item", name="zirconia", amount=1})
   c_recipe = data.raw.recipe["repair-capsule-rampant-arsenal"]
   for i, component in pairs(c_recipe.normal.ingredients) do
    for _, value in pairs(component) do
     if value == "steel-plate" then
-     c_recipe.normal.ingredients[i] = {type="item", name="zirconia", amount=4}
+     c_recipe.normal.ingredients[i] = {type="item", name="zirconia", amount=5}
      break
     end
    end
@@ -286,6 +285,16 @@ if mods["bzzirconium"] then
     table.insert(data.raw.recipe["green-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
     table.insert(data.raw.recipe["low-density-structure"].normal.ingredients, {type="item", name="copper-plate", amount=12})
     --data.raw.technology["silica-processing"].prerequisites = {"crusher"}
+    c_recipe = data.raw.recipe["repair-pack"]
+--[[    for i, component in pairs(c_recipe.ingredients) do
+      for _, value in pairs(component) do
+       if value == "electronic-circuit" then
+        c_recipe.ingredients[i] = {type="item", name="electronic-circuit", amount=1}
+        break
+       end
+      end
+    end --]]
+    table.insert(c_recipe.ingredients, {type="item", name="silica", amount=3})
   end
 
 end

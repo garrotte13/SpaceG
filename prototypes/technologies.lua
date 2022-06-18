@@ -37,12 +37,12 @@ data:extend({
         recipe = "y_crusher",
       },
     },
-    prerequisites = { "steel-processing" },
+    prerequisites = { "steel-axe" },
     unit = {
-      count = 100,
+      count = 150,
       ingredients = {
         {"automation-science-pack", 1},
-        --{"logistic-science-pack", 1},
+        {"logistic-science-pack", 1},
       },
       time = 30,
     },
@@ -66,7 +66,7 @@ data:extend({
         shift = {100, 100}
       }
     },
-    prerequisites = {"toolbelt", "utility-science-pack", "production-science-pack" },
+    prerequisites = {"toolbelt", "power-armor" },
     effects =
     {
       {
@@ -76,14 +76,12 @@ data:extend({
     },
     unit =
     {
-      count = 1000,
+      count = 500,
       ingredients =
       {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
         {"chemical-science-pack", 1},
-        {"production-science-pack", 1},
-        {"utility-science-pack", 1}
       },
       time = 30
     },

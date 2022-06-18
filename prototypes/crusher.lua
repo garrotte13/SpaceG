@@ -119,9 +119,9 @@ data:extend({
 		minable = {hardness = 0.5, mining_time = 0.7, result = "y_crusher"},
 		max_health = 300,
         light = nil,
-        collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
-        selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-        entity_info_icon_shift = {0, 0.6},
+        collision_box = {{-1.9, -1.9}, {1.9, 1.9}},
+        selection_box = {{-2.0, -2.0}, {2.0, 2.0}},
+        entity_info_icon_shift = {0, 0.5},
         working_sound = {
             sound = {
             filename = "__SpaceG__/sounds/crusher.ogg",
@@ -152,8 +152,8 @@ data:extend({
             height = 128,
             frame_count = 32,
             line_length = 8,
-            scale = 1.67,
-            shift = {0.7415, -0.73125},
+            scale = 1.3334,
+            shift = {0.5615, -0.70125},
             animation_speed = 0.666667,
             hr_version =
             {
@@ -164,13 +164,12 @@ data:extend({
               frame_count = 32,
               line_length = 8,
               --shift = {0.4375, -0.28125},
-              shift = {0.7415, -0.73125},
+              shift = {0.5615, -0.70125},
               animation_speed = 0.666667,
-              scale = 0.8335
+              scale = 0.6667
             }
           },
-        },
-        {
+
             {
               filename = "__SpaceG__/graphics/crusher_apm/crusher_shadow_electric.png",
               priority = "high",
@@ -179,9 +178,9 @@ data:extend({
               height = 128,
               frame_count = 32,
               line_length = 8,
-              shift = {0.7415, -0.73125},
+              shift = {0.5615, -0.70125},
               animation_speed = 0.666667,
-              scale = 1.67,
+              scale = 1.3334,
               hr_version =
               {
                 filename = "__SpaceG__/graphics/crusher_apm/hr_crusher_shadow_electric.png",
@@ -191,16 +190,15 @@ data:extend({
                 height = 256,
                 frame_count = 32,
                 line_length = 8,
-                shift = {0.7415, -0.73125},
+                shift = {0.5615, -0.70125},
                 animation_speed = 0.666667,
-                scale = 0.8335
+                scale = 0.6667
               }
             },
-          },
-      },
-
-
+        },
     },
+
+  },
 
     {
       type = "furnace",
@@ -264,9 +262,9 @@ data:extend({
                 scale = 0.5
               }
             },
-          },
-          {
-              {
+          
+            {
+
                 filename = "__SpaceG__/graphics/crusher_apm/crusher_shadow.png",
                 priority = "high",
                 draw_as_shadow = true,
@@ -289,11 +287,11 @@ data:extend({
                   animation_speed = 1.0666667,
                   scale = 0.5
                 }
-              },
             },
-        },
-  
-  
+
+          }
       },
+
+    },
 
 })

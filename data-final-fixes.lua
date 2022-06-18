@@ -201,7 +201,7 @@ end
 if mods["bzzirconium"] then
 
   table.insert(data.raw.recipe["substation"].ingredients, {type="item", name="cermet", amount=5})
-
+  table.insert(data.raw.recipe["y_crusher"].ingredients, {type="item", name="zirconium-plate", amount=10})
 
   data.raw.resource["zircon"].autoplace = resource_autoplace.resource_autoplace_settings{
     name = "zircon",

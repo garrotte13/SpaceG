@@ -37,7 +37,7 @@ data:extend({
         recipe = "y_crusher",
       },
     },
-    prerequisites = { "steel-axe" },
+    prerequisites = { "steel-axe", "advanced-material-processing" },
     unit = {
       count = 150,
       ingredients = {
@@ -76,7 +76,7 @@ data:extend({
     },
     unit =
     {
-      count = 500,
+      count = 400,
       ingredients =
       {
         {"automation-science-pack", 1},

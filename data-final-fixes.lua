@@ -202,6 +202,14 @@ if mods["bzzirconium"] then
 
   table.insert(data.raw.recipe["substation"].ingredients, {type="item", name="cermet", amount=5})
   table.insert(data.raw.recipe["y_crusher"].ingredients, {type="item", name="zirconium-plate", amount=10})
+  table.insert(data.raw.recipe["stack-inserter"].ingredients, {type="item", name="zirconium-plate", amount=3})
+  table.insert(data.raw.recipe["car"].ingredients, {type="item", name="zirconium-plate", amount=10})
+  table.insert(data.raw.recipe["tank"].normal.ingredients, {type="item", name="zirconium-plate", amount=30})
+  table.insert(data.raw.recipe["locomotive"].ingredients, {type="item", name="zirconium-plate", amount=50})
+  table.insert(data.raw.recipe["cargo-wagon"].ingredients, {type="item", name="zirconium-plate", amount=20})
+  table.insert(data.raw.recipe["fluid-wagon"].ingredients, {type="item", name="zirconium-plate", amount=20})
+  table.insert(data.raw.recipe["artillery-wagon"].ingredients, {type="item", name="zirconium-plate", amount=20})
+  table.insert(data.raw.recipe["vehicle-wagon"].ingredients, {type="item", name="zirconium-plate", amount=20})
 
   data.raw.resource["zircon"].autoplace = resource_autoplace.resource_autoplace_settings{
     name = "zircon",

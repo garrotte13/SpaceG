@@ -200,7 +200,6 @@ end
 
 if mods["bzzirconium"] then
 
-  table.insert(data.raw.recipe["substation"].ingredients, {type="item", name="cermet", amount=5})
   table.insert(data.raw.recipe["y_crusher"].ingredients, {type="item", name="zirconium-plate", amount=10})
   table.insert(data.raw.recipe["stack-inserter"].ingredients, {type="item", name="zirconium-plate", amount=3})
   table.insert(data.raw.recipe["car"].ingredients, {type="item", name="zirconium-plate", amount=10})
@@ -254,9 +253,6 @@ if mods["bzzirconium"] then
   if mods["bztungsten"] then table.insert(data.raw.recipe["fire-torch-parts"].ingredients, {type="item", name="zirconia", amount=20}) end
 
 
-
-
-  
   if mods["bztitanium"] then
     c_recipe = data.raw.recipe["low-density-structure"]
    for i, component in pairs(c_recipe.normal.ingredients) do
@@ -292,17 +288,12 @@ if mods["bzzirconium"] then
     table.insert(data.raw.recipe["red-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
     table.insert(data.raw.recipe["green-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
     table.insert(data.raw.recipe["low-density-structure"].normal.ingredients, {type="item", name="copper-plate", amount=12})
-    --data.raw.technology["silica-processing"].prerequisites = {"crusher"}
-    c_recipe = data.raw.recipe["repair-pack"]
---[[    for i, component in pairs(c_recipe.ingredients) do
-      for _, value in pairs(component) do
-       if value == "electronic-circuit" then
-        c_recipe.ingredients[i] = {type="item", name="electronic-circuit", amount=1}
-        break
-       end
-      end
-    end --]]
-    table.insert(c_recipe.ingredients, {type="item", name="silica", amount=3})
+
+    table.insert(data.raw.recipe["repair-pack"].ingredients, {type="item", name="silica", amount=3})
+
+    table.insert(data.raw.recipe["substation"].ingredients, {type="item", name="cermet", amount=5})
+    table.insert(data.raw.technology["electric-energy-distribution-2"].prerequisites, "cermet")
+
   end
 
 end

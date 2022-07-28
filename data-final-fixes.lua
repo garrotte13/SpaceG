@@ -1,3 +1,4 @@
+--require("prototypes/electrify-offshore-pump")
 local c_recipe
 local resource_autoplace = require('resource-autoplace');
 
@@ -25,7 +26,8 @@ if mods["bztungsten"] then
   table.insert(c_recipe.ingredients, {type="item", name="copper-plate", amount=2})
 -- End fixing piercing bullets ---
 
-  c_recipe = data.raw.recipe["artillery-shell"] --shells don't have rocket engines
+--[[
+c_recipe = data.raw.recipe["artillery-shell"] --shells don't have rocket engines. Ok-ok, let them be, because M142 shells use those engines to burn Putler.
   for i, component in pairs(c_recipe.ingredients) do
     for _, value in pairs(component) do
       if value == "rocket-engine-nozzle" then
@@ -34,6 +36,7 @@ if mods["bztungsten"] then
       end
     end
   end
+]]
 
   c_recipe = data.raw.recipe["laser-turret"]
   for i, component in pairs(c_recipe.ingredients) do
@@ -210,6 +213,8 @@ if mods["bzzirconium"] then
   table.insert(data.raw.recipe["artillery-wagon"].ingredients, {type="item", name="zirconium-plate", amount=20})
   table.insert(data.raw.recipe["vehicle-wagon"].ingredients, {type="item", name="zirconium-plate", amount=20})
 
+  table.insert(data.raw.recipe["defender-capsule"].ingredients, {type="item", name="zirconium-plate", amount=1})
+
   data.raw.resource["zircon"].autoplace = resource_autoplace.resource_autoplace_settings{
     name = "zircon",
     order = "b-z",
@@ -271,6 +276,13 @@ if mods["bzzirconium"] then
      end
     end
    end
+    table.insert(data.raw.recipe["turret-pod-gun-t1-empty-equipment"].ingredients, {type="item", name="titanium-plate", amount=15})
+    table.insert(data.raw.recipe["turret-pod-gun-t2-empty-equipment"].ingredients, {type="item", name="titanium-plate", amount=10})
+    table.insert(data.raw.recipe["turret-pod-flame-t1-empty-equipment"].ingredients, {type="item", name="titanium-plate", amount=15})
+    table.insert(data.raw.recipe["turret-pod-shotgun-t1-empty-equipment"].ingredients, {type="item", name="titanium-plate", amount=15})
+    table.insert(data.raw.recipe["turret-pod-shotgun-t2-empty-equipment"].ingredients, {type="item", name="titanium-plate", amount=10})
+
+
 
   end
  

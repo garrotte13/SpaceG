@@ -4,7 +4,6 @@ data:extend({
   {
     type = "technology",
     name = "kr-sentinel",
-   -- mod = "Krastorio2",
     icon = "__SpaceG__/graphics/sentinel_tech.png",
     icon_size = 256,
     icon_mipmaps = 4,
@@ -20,6 +19,35 @@ data:extend({
       ingredients = {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
+      },
+      time = 30,
+    },
+  },
+
+  {
+    type = "technology",
+    name = "kr-sentinel2",
+    icons =
+    {
+      {
+        icon_size = 256, icon_mipmaps = 4,
+        icon = "__SpaceG__/graphics/sentinel_tech.png",
+      },
+      { icon = "__TurretPod__/graphics/icons/tiers/2.png", icon_size = 64, scale = 2, shift = {62, -67} },
+    },
+    prerequisites = { "kr-sentinel", "chemical-science-pack" },
+    effects = {
+      {
+        type = "unlock-recipe",
+        recipe = "kr-sentinel2",
+      },
+    },
+    unit = {
+      count = 200,
+      ingredients = {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
       },
       time = 30,
     },

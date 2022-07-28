@@ -19,7 +19,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "y_crusher",
-		icon_size = 128, icon =  "__SpaceG__/graphics/apm_crusher_machine_2.png",
+		--icon_size = 128, icon =  "__SpaceG__/graphics/apm_crusher_machine_2.png",
 		enabled = "false",
 		ingredients = {
       {"steel-plate", 5},
@@ -38,7 +38,8 @@ data:extend({
 	{
 		type = "item",
 		name = "y_crusher",
-		icon_size = 128, icon =  "__SpaceG__/graphics/apm_crusher_machine_2.png",
+		icon_size = 64, icon =  "__SpaceG__/graphics/crusher_icon.png",
+    icon_mipmaps = 4,
 --		group = "productivity",
 		subgroup = "production-machine",
 		order = "c1",

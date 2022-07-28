@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.6
+Date: 2022-08-?
+  Changes:
+        - Adding Titanium to turret pods recipes.
+        - Sentinel MK2 added to fight disappointment in Factorio about Fog of War complete abscence.
+---------------------------------------------------------------------------------------------------
 Version: 0.3.5
 Date: 2022-06-?
   Changes:

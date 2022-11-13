@@ -130,7 +130,7 @@ data:extend(
 		collision_box = {{-1.3, -1.3}, {1.3, 1.3}},
 		selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
 		energy_per_sector = "1YJ",
-		energy_per_nearby_scan = "240kJ",
+		energy_per_nearby_scan = "280kJ",
 		max_distance_of_sector_revealed = 0,
 		max_distance_of_nearby_sector_revealed = 3,
 		energy_source =
@@ -138,7 +138,7 @@ data:extend(
 			type = "electric",
 			usage_priority = "secondary-input"
 		},
-		energy_usage = "120kW",
+		energy_usage = "140kW",
 		pictures =
 		{
 			layers =

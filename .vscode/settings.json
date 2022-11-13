@@ -3,6 +3,9 @@
         "data",
         "mods",
         "global",
-        "game"
+        "game",
+        "event",
+        "script",
+        "defines"
     ]
 }

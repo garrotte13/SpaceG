@@ -68,7 +68,17 @@ function depollution.process()
     --log("a new chunk: " .. serpent.line(chunk.area))
 end
 
+function depollution.on_chunk_generated(chunk, surface)
+    local r = global.subchunks.last_id
+    global.subchunks.queue[r] = {
+        x = chunk.x*32,
+        y = chunk.y*32,
+        clean_tick = 0
+    }
 
-
+    global.subchunks.last_id = r + 1
+    global.subchunks.counter = r
+    game.print ("A chunk has been generated [gps=" .. chunk.x*32 .. "," .. chunk.y*32 .."]. Chunks quantity incremented: " .. r)
+end
 
 return depollution

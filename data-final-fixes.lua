@@ -347,5 +347,3 @@ local air_working_sound = {
 }
 data.raw["assembling-machine"]["air-filter-rampant-industry"].working_sound = air_working_sound
 data.raw["assembling-machine"]["air-filter-2-rampant-industry"].working_sound = air_working_sound
-
-data.raw.car["tank"].terrain_friction_modifier = 0.09

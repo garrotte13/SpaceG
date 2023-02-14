@@ -8,22 +8,22 @@ if mods["bztungsten"] then
   for i, component in pairs(c_recipe.ingredients) do
    for _, value in pairs(component) do
     if value == "tungsten-plate" then
-     c_recipe.ingredients[i] = {type="item", name="tungsten-plate", amount=2}
+     c_recipe.ingredients[i] = {type="item", name="tungsten-plate", amount=1}
      break
     end
    end
   end
-  table.insert(c_recipe.ingredients, {type="item", name="copper-plate", amount=2})
+  table.insert(c_recipe.ingredients, {type="item", name="copper-plate", amount=4})
   c_recipe = data.raw.recipe["piercing-shotgun-shell"]
   for i, component in pairs(c_recipe.ingredients) do
    for _, value in pairs(component) do
     if value == "tungsten-plate" then
-     c_recipe.ingredients[i] = {type="item", name="tungsten-plate", amount=2}
+     c_recipe.ingredients[i] = {type="item", name="tungsten-plate", amount=1}
      break
     end
    end
   end
-  table.insert(c_recipe.ingredients, {type="item", name="copper-plate", amount=2})
+  table.insert(c_recipe.ingredients, {type="item", name="copper-plate", amount=4})
 -- End fixing piercing bullets ---
 
 --[[
@@ -219,7 +219,7 @@ if mods["bzzirconium"] then
     name = "zircon",
     order = "b-z",
     base_density = 4,
-    has_starting_area_placement = false,
+    has_starting_area_placement = true,
     regular_rq_factor_multiplier = 1.1,
     starting_rq_factor_multiplier = 1.2,
   }
@@ -282,7 +282,36 @@ if mods["bzzirconium"] then
     table.insert(data.raw.recipe["turret-pod-shotgun-t1-empty-equipment"].ingredients, {type="item", name="titanium-plate", amount=15})
     table.insert(data.raw.recipe["turret-pod-shotgun-t2-empty-equipment"].ingredients, {type="item", name="titanium-plate", amount=10})
 
-
+    if mods["SchallSuit"] then
+      c_recipe = data.raw.recipe["Schall-engineering-suit-mk1"]
+      for i, component in pairs(c_recipe.ingredients) do
+        for _, value in pairs(component) do
+         if value == "steel-plate" then
+          c_recipe.ingredients[i] = {type="item", name="titanium-plate", amount=30}
+          break
+         end
+        end
+       end
+       c_recipe = data.raw.recipe["Schall-engineering-suit-mk2"]
+       for i, component in pairs(c_recipe.ingredients) do
+        for _, value in pairs(component) do
+         if value == "processing-unit" then
+          c_recipe.ingredients[i] = {type="item", name="processing-unit", amount=20}
+          break
+         end
+        end
+       end
+       for i, component in pairs(c_recipe.ingredients) do
+        for _, value in pairs(component) do
+         if value == "electric-engine-unit" then
+          c_recipe.ingredients[i] = {type="item", name="electric-engine-unit", amount=20}
+          break
+         end
+        end
+       end
+       table.insert(c_recipe.ingredients, {type="item", name="Schall-engineering-suit-mk1", amount=1})
+       --table.insert(c_recipe.ingredients, {type="item", name="titanium-plate", amount=10})
+    end
 
   end
  
@@ -310,6 +339,7 @@ if mods["bzzirconium"] then
 
 end
 
+
 local air_working_sound = {
   sound = { filename = "__SpaceG__/sounds/air-purifier.ogg" },
   idle_sound = { filename = "__base__/sound/idle1.ogg" },
@@ -317,3 +347,5 @@ local air_working_sound = {
 }
 data.raw["assembling-machine"]["air-filter-rampant-industry"].working_sound = air_working_sound
 data.raw["assembling-machine"]["air-filter-2-rampant-industry"].working_sound = air_working_sound
+
+data.raw.car["tank"].terrain_friction_modifier = 0.09

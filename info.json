@@ -1,6 +1,6 @@
 {
   "name": "SpaceG",
-  "version": "0.4.0",
+  "version": "0.3.8",
   "title": "SpaceG",
   "author": "garrotte",
   "description": "Private mod. Combo fixes for mods for a smooth long play - to replace SpaceMod",
@@ -11,5 +11,5 @@
     "Warmonger >= 1.3.8",
     "VehicleWagon2 >= 3.1.20",
     "TurretPod",
-    "? bzzirconium", "? bztitanium", "? bzsilicon" , "? bztungsten"]
+    "? bzzirconium", "? bztitanium", "? bzsilicon" , "? bztungsten", "? SchallSuit"]
 }

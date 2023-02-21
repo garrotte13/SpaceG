@@ -198,7 +198,7 @@ data:extend(
 		enabled = false,
 		ingredients =
 		{
-			{"tungsten-plate", 3},
+			(mods["SpaceG"] and settings.startup["bzsilicon-more-intermediates"].value == "more" ) and {"gyro", 2} or {"tungsten-plate", 2},
 			{"kr-sentinel", 2},
 			{"advanced-circuit", 5},
 			{"zirconium-plate", 5}

@@ -2,13 +2,13 @@ require("prototypes/sentinel")
 require("prototypes/resources/resource-categories")
 --require("prototypes/quarry-drill")
 require("prototypes/quarry-drill")
-require("prototypes/crusher")
+
 require("prototypes/resources/resources_items")
 require("prototypes/resources/imersite")
 require("prototypes/resources/mineral-water")
 require("prototypes/resources/rare-metals")
 require("prototypes/technologies")
-if mods["bztungsten"] then require("prototypes/firetorchparts") end
+
 
    local fusion_fuel_category = {
     name = "fusion",

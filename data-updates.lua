@@ -4,6 +4,16 @@ water_barrel.burnt_result = "empty-barrel"
 water_barrel.fuel_value = "0.9GJ"
 water_barrel.fuel_category = "fusion"
 
+data.raw["reactor"]["nuclear-reactor"].working_sound =
+{
+  sound =
+  {
+    {
+      filename = "__SpaceG__/sounds/reactor-active.ogg",
+      volume = 0.8
+    }
+  }
+}
 
 --[[
 if mods["SchallSuit"] then

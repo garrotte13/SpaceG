@@ -1,7 +1,7 @@
 
 local water_barrel = data.raw.item["mineral-water-barrel"]
 water_barrel.burnt_result = "empty-barrel"
-water_barrel.fuel_value = "0.9GJ"
+water_barrel.fuel_value = "0.5GJ"
 water_barrel.fuel_category = "fusion"
 
 data.raw["reactor"]["nuclear-reactor"].working_sound =
@@ -14,6 +14,17 @@ data.raw["reactor"]["nuclear-reactor"].working_sound =
     }
   }
 }
+if mods["RampantArsenal"] then
+  local reactor_ra = data.raw["generator-equipment"]["mk3-generator-rampant-arsenal"]
+  reactor_ra.burner = {
+    type = "burner",
+    fuel_inventory_size = 2,
+    burnt_inventory_size = 2,
+    fuel_category = "fusion",
+    effectivity = 0.85
+  }
+  reactor_ra.power = "1.7MW"
+end
 
 --[[
 if mods["SchallSuit"] then
